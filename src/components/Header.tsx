@@ -8,11 +8,11 @@ interface HeaderProps {
     children: ReactNode
 }
 
-export default function Header({image, children}:HeaderProps){
+export default function Header({ image, children }: HeaderProps) {
     return (
         <header>
-      <img {...image} />
-      {children}
-    </header>
+            <img {...image} />
+            {children}
+        </header>
     )
 }
