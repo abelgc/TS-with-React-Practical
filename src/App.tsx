@@ -30,9 +30,8 @@ export default function App() {
   function handleDeleteGoal(id: number) {
 
     setGoals(existingGoals => existingGoals.filter((goal) => goal.id !== id));
-
-
   }
+  
   return (
     <main>
       <Header image={{ src: goalsImg, alt: 'A list of goals' }}>
