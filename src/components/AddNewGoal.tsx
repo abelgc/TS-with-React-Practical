@@ -1,6 +1,10 @@
 import { FormEvent, useRef } from "react";
 
-export default function AddNewGoal() {
+type NewGoalProps = {
+    onAddGoal: (goal: string, summary: string) => void;
+  };
+
+export default function AddNewGoal({onAddGoal}: NewGoalProps) {
 
     const goal = useRef<HTMLInputElement>(null);
     const summary = useRef<HTMLInputElement>(null);
@@ -11,6 +15,13 @@ export default function AddNewGoal() {
       const enteredGoal = goal.current!.value;
       const enteredSummary = summary.current!.value;
       
+      if (enteredGoal.trim().length === 0 || enteredSummary.trim().length === 0) {
+        return;
+      }
+      // reset the form with an inbuild method
+      event.currentTarget.reset();
+      
+      onAddGoal(enteredGoal, enteredSummary);
     }
   
     return (
