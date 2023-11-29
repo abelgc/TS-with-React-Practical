@@ -13,7 +13,7 @@ export default function CourseGoalList({ goals, onDeleteGoal }: CourseGoalListPr
 
     if(goals.length === 0) {
         return (
-            <InfoBox mode="hint" severity='low'>
+            <InfoBox mode="hint">
               You have no course goals yet. Start adding some!
             </InfoBox>
           );
